@@ -4,18 +4,19 @@ include "root" {
 }
 
 terraform {
-  source = "../../../modules/ec2-instance"
+  source = "../../../modules/ec2"
 }
 
 dependency "vpc" {
-  config_path = "../vpc"
+  config_path = "../thor_vpc"
 }
+
 
 inputs = {
   instance_type = "t2.micro"
   instance_name = "example-server-thorev"
   ami = "ami-09298640a92b2d12c"
-  subnet_id = dependency.vpc.outputs.public_subnets[0]
+  subnet_id = module.vpc.public_subnet_ids[0]
 
   tags = {
     Name = "example-server-thorev"

@@ -3,7 +3,7 @@ include "root" {
   path = find_in_parent_folders()
 }
 terraform {
-  source = "../../../modules/s3bucket"
+  source = "../../../modules/s3"
 }
 inputs = {
   s3_bucket_name = "dev-datastore-inifinity-stones"
