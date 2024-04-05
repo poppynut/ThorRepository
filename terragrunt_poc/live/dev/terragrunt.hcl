@@ -18,7 +18,7 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket = "hmcl-thor-terraform-statefile-bucket1"
+    bucket = "hmcl-thor-terraform-statefile-bucket"
 
     key = "${path_relative_to_include()}/terraform.tfstate"
     region         = "ap-south-1"
